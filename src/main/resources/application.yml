@@ -1,0 +1,18 @@
+spring:
+  main:
+    lazy-initialization: true
+  config:
+    activate:
+      on-profile:
+
+apis:
+  crecer:
+    uriTemplate: ${CRECER_URL:http://sesb2303ax.bancocredicoop.coop/listacandidatos-creditos-txt/rest/api/v1/listacandidatos/A/id/{id}}
+
+server:
+  port: ${PORT:8080}
+  address: ${APP_ADDRESS:0.0.0.0}
+  error:
+    include-message: always
+  undertow:
+    no-request-timeout: -1

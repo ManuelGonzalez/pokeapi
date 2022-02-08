@@ -22,10 +22,10 @@ public class CrecerServiceImp implements CrecerService {
     CrecerStorage crecerStorage;
 
     @Override
-    public List<ClientDto> findById(String id) throws ServiceException {
+    public List<ClientDto> findById(String id, String path) throws ServiceException {
         try {
 
-            return crecerStorage.findById(id).map(CrecerResponseDto::getCandidatos).orElse(null);
+            return crecerStorage.findById(id, path).map(CrecerResponseDto::getCandidatos).orElse(null);
 
         } catch (CrecerStorageException e) {
             ErrorService error = new ErrorService("Error get person data", e.getMessage());

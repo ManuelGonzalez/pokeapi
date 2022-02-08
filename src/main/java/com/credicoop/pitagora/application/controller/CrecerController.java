@@ -21,9 +21,9 @@ public class CrecerController {
     @Autowired
     CrecerService crecerService;
 
-    @GetMapping("/{id}")
-    public ResponseEntity<List<ClientDto>> getClientById(@PathVariable("id") String id) throws ServiceException {
-        return new ResponseEntity<List<ClientDto>>(this.crecerService.findById(id), HttpStatus.OK);
+    @GetMapping("/{path}/{id}")
+    public ResponseEntity<List<ClientDto>> getClientById(@PathVariable("id") String id, @PathVariable("path") String path) throws ServiceException {
+        return new ResponseEntity<List<ClientDto>>(this.crecerService.findById(id, path), HttpStatus.OK);
     }
 
 }

@@ -1,7 +1,6 @@
 package com.credicoop.pitagora.domain.storage.crecer;
 
 import com.credicoop.pitagora.domain.storage.ErrorStorage;
-import com.credicoop.pitagora.dto.ClientDto;
 import com.credicoop.pitagora.dto.CrecerResponseDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,10 +30,11 @@ public class CrecerStorage {
 		this.webClient = webClient;
 	}
 
-	public Optional<CrecerResponseDto> findById(String clientId) throws CrecerStorageException {
+	public Optional<CrecerResponseDto> findById(String clientId, String path) throws CrecerStorageException {
 
 		Map<String, String> param = new HashMap<String, String>();
 		param.put("id", clientId);
+		param.put("path", path);
 
 		UriComponents uri = UriComponentsBuilder.fromUriString(crecerUrl).buildAndExpand(param);
 

@@ -7,7 +7,7 @@ spring:
 
 apis:
   crecer:
-    uriTemplate: ${CRECER_URL:http://sesb2303ax.bancocredicoop.coop/listacandidatos-creditos-txt/rest/api/v1/listacandidatos/A/id/{id}}
+    uriTemplate: ${CRECER_URL:http://sesb2303ax.bancocredicoop.coop/listacandidatos-creditos-txt/rest/api/v1/listacandidatos/A/{path}/{id}}
 
 server:
   port: ${PORT:8080}

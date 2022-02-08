@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface CrecerService {
 
-    List<ClientDto> findById(String id) throws ServiceException;
+    List<ClientDto> findById(String id, String path) throws ServiceException;
 
 }

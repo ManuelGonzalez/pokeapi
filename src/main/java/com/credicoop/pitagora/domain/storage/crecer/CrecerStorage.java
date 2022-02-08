@@ -2,6 +2,7 @@ package com.credicoop.pitagora.domain.storage.crecer;
 
 import com.credicoop.pitagora.domain.storage.ErrorStorage;
 import com.credicoop.pitagora.dto.ClientDto;
+import com.credicoop.pitagora.dto.CrecerResponseDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -30,7 +31,7 @@ public class CrecerStorage {
 		this.webClient = webClient;
 	}
 
-	public Optional<List<ClientDto>> findById(String clientId) throws CrecerStorageException {
+	public Optional<CrecerResponseDto> findById(String clientId) throws CrecerStorageException {
 
 		Map<String, String> param = new HashMap<String, String>();
 		param.put("id", clientId);
@@ -39,10 +40,10 @@ public class CrecerStorage {
 
 		try {
 
-			return Optional.of(Arrays.stream(Objects.requireNonNull(this.webClient.get().uri(uri.toUri()).headers(headers -> {
+			return Optional.ofNullable(this.webClient.get().uri(uri.toUri()).headers(headers -> {
 				headers.add(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE);
 				headers.add(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
-			}).retrieve().bodyToMono(ClientDto[].class).log().block())).collect(Collectors.toList()));
+			}).retrieve().bodyToMono(CrecerResponseDto.class).block());
 
 		} catch (NotFound e) {
 			String message = clientId.concat(" not found");

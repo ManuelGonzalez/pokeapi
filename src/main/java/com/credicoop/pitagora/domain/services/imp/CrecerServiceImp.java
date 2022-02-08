@@ -3,10 +3,10 @@ package com.credicoop.pitagora.domain.services.imp;
 import com.credicoop.pitagora.domain.services.CrecerService;
 import com.credicoop.pitagora.domain.services.ErrorService;
 import com.credicoop.pitagora.domain.services.ServiceException;
-import com.credicoop.pitagora.domain.storage.ErrorStorage;
 import com.credicoop.pitagora.domain.storage.crecer.CrecerStorage;
 import com.credicoop.pitagora.domain.storage.crecer.CrecerStorageException;
 import com.credicoop.pitagora.dto.ClientDto;
+import com.credicoop.pitagora.dto.CrecerResponseDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,7 +25,7 @@ public class CrecerServiceImp implements CrecerService {
     public List<ClientDto> findById(String id) throws ServiceException {
         try {
 
-            return crecerStorage.findById(id).orElse(null);
+            return crecerStorage.findById(id).map(CrecerResponseDto::getCandidatos).orElse(null);
 
         } catch (CrecerStorageException e) {
             ErrorService error = new ErrorService("Error get person data", e.getMessage());

@@ -1,4 +1,4 @@
-package com.credicoop.pitagora.dto;
+package com.manuel.pokeapi.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,8 +11,9 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CrecerResponseDto {
+public class PokemonMinResponseDto {
 
-    List<ClientDto> candidatos;
+
+    private List<PokemonMinDto> results;
 
 }

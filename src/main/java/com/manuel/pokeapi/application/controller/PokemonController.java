@@ -1,8 +1,8 @@
-package com.credicoop.pitagora.application.controller;
+package com.manuel.pokeapi.application.controller;
 
-import com.credicoop.pitagora.domain.services.CrecerService;
-import com.credicoop.pitagora.domain.services.ServiceException;
-import com.credicoop.pitagora.dto.ClientDto;
+import com.manuel.pokeapi.domain.services.CrecerService;
+import com.manuel.pokeapi.domain.services.ServiceException;
+import com.manuel.pokeapi.dto.ClientDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

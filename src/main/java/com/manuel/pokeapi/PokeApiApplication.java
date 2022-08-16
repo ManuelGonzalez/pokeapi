@@ -1,4 +1,4 @@
-package com.credicoop.pitagora;
+package com.manuel.pokeapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

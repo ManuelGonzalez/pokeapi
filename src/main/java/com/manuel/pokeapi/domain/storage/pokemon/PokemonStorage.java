@@ -1,7 +1,7 @@
-package com.credicoop.pitagora.domain.storage.crecer;
+package com.manuel.pokeapi.domain.storage.crecer;
 
-import com.credicoop.pitagora.domain.storage.ErrorStorage;
-import com.credicoop.pitagora.dto.CrecerResponseDto;
+import com.manuel.pokeapi.domain.storage.ErrorStorage;
+import com.manuel.pokeapi.dto.CrecerResponseDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,29 +14,28 @@ import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Service
-public class CrecerStorage {
+public class PokemonStorage {
 
-	@Value("${apis.crecer.uriTemplate}")
-	private String crecerUrl;
+	@Value("${apis.pokeapi.uriTemplate}")
+	private String pokeApiUrk;
 
 	private final WebClient webClient;
 
 	@Autowired
-	public CrecerStorage(WebClient webClient) {
+	public PokemonStorage(WebClient webClient) {
 		this.webClient = webClient;
 	}
 
-	public Optional<CrecerResponseDto> findById(String clientId, String path) throws CrecerStorageException {
+	public Optional<CrecerResponseDto> findById(String clientId, String path) throws PokemonStorageException {
 
 		Map<String, String> param = new HashMap<String, String>();
 		param.put("id", clientId);
 		param.put("path", path);
 
-		UriComponents uri = UriComponentsBuilder.fromUriString(crecerUrl).buildAndExpand(param);
+		UriComponents uri = UriComponentsBuilder.fromUriString(pokeApiUrk).buildAndExpand(param);
 
 		try {
 
@@ -51,9 +50,9 @@ public class CrecerStorage {
 			log.error(error.toString());
 			return Optional.empty();
 		} catch (Exception e) {
-			ErrorStorage error = new ErrorStorage(CrecerStorageException.REMOTE_DISPOSITIVE_FAILED, e.getMessage());
+			ErrorStorage error = new ErrorStorage(PokemonStorageException.REMOTE_DISPOSITIVE_FAILED, e.getMessage());
 			log.error(error.toString());
-			throw new CrecerStorageException(error);
+			throw new PokemonStorageException(error);
 		}
 
 	}

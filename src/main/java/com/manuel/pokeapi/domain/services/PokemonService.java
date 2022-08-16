@@ -1,6 +1,6 @@
-package com.credicoop.pitagora.domain.services;
+package com.manuel.pokeapi.domain.services;
 
-import com.credicoop.pitagora.dto.ClientDto;
+import com.manuel.pokeapi.dto.ClientDto;
 
 import java.util.List;
 

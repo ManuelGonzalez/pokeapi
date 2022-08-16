@@ -14,8 +14,6 @@ import java.util.List;
 public class PokemonResponseDto {
 
     private Integer count;
-    private String next;
-    private String previous;
     private List<PokemonDto> results;
 
 }

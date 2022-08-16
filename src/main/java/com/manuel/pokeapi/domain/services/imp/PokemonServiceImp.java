@@ -48,8 +48,6 @@ public class PokemonServiceImp implements PokemonService {
 
             return PokemonResponseDto.builder()
                     .count(response.get().getCount())
-                    .next(response.get().getNext())
-                    .previous(response.get().getPrevious())
                     .results(pokemons)
                     .build();
 

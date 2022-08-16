@@ -11,9 +11,11 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class PokemonResponseDto {
+public class PokemonMinResponseDto {
 
-    
+    private Integer count;
+    private String next;
+    private String previous;
     private List<PokemonMinDto> results;
 
 }

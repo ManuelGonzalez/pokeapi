@@ -11,9 +11,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class TypeDto {
+public class PokemonTypeDto {
 
-  private String name;
-  private String url;
+  private Integer slot;
+  private TypeDto type;
     
 }

@@ -1,6 +1,6 @@
-package com.credicoop.pitagora.domain.services;
+package com.manuel.pokeapi.domain.services;
 
-import com.credicoop.pitagora.common.ErrorLogger;
+import com.manuel.pokeapi.common.ErrorLogger;
 
 public class ErrorService extends ErrorLogger {
 

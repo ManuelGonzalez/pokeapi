@@ -6,8 +6,9 @@ spring:
       on-profile:
 
 apis:
-  crecer:
-    uriTemplate: ${CRECER_URL:http://sesb2303ax.bancocredicoop.coop/listacandidatos-creditos-txt/rest/api/v1/listacandidatos/A/{path}/{id}}
+  pokeapi:
+    uriTemplate: ${POKEAPI_URL:https://pokeapi.co/api/v2/pokemon}
+    uriTemplateWithId: ${POKEAPI_WITH_ID_URL:https://pokeapi.co/api/v2/pokemon/{id}}
 
 server:
   port: ${PORT:8080}

@@ -1,6 +1,6 @@
-package com.credicoop.pitagora.domain.storage;
+package com.manuel.pokeapi.domain.storage;
 
-import com.credicoop.pitagora.common.ErrorLogger;
+import com.manuel.pokeapi.common.ErrorLogger;
 
 public class ErrorStorage extends ErrorLogger {
 

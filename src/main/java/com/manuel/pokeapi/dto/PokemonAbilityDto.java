@@ -10,9 +10,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AbilityDto {
+public class PokemonAbilityDto {
 
-  private String name;
-  private String url;
+  private Integer slot;
+  private AbilityDto ability;
     
 }

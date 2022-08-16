@@ -1,4 +1,4 @@
-package com.manuel.pokeapi.domain.storage.crecer;
+package com.manuel.pokeapi.domain.storage.pokemon;
 
 import com.manuel.pokeapi.domain.storage.ErrorStorage;
 import com.manuel.pokeapi.domain.storage.StorageException;

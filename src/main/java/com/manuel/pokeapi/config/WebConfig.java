@@ -1,4 +1,4 @@
-package com.credicoop.pitagora.config;
+package com.manuel.pokeapi.config;
 
 import io.netty.channel.ChannelOption;
 import io.netty.handler.ssl.SslContext;

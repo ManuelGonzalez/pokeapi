@@ -1,4 +1,4 @@
-package com.credicoop.pitagora.common;
+package com.manuel.pokeapi.common;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

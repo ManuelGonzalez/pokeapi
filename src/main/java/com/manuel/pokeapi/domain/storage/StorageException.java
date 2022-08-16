@@ -1,4 +1,4 @@
-package com.credicoop.pitagora.domain.storage;
+package com.manuel.pokeapi.domain.storage;
 
 import lombok.Getter;
 

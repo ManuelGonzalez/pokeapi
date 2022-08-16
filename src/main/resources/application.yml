@@ -11,8 +11,6 @@ apis:
     uriTemplateWithId: ${POKEAPI_WITH_ID_URL:https://pokeapi.co/api/v2/pokemon/{id}}
 
 server:
-  port: ${PORT:8080}
-  address: ${APP_ADDRESS:0.0.0.0}
   error:
     include-message: always
   undertow:

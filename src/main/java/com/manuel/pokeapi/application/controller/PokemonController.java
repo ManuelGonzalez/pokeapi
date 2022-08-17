@@ -18,6 +18,7 @@ import java.util.List;
  * RestController for client entity
  */
 @RestController
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET})
 @RequestMapping(path = "/pokemon")
 public class PokemonController {
 
